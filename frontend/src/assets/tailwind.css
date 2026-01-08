@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import './quill-tailwind.css';
+@plugin "@tailwindcss/typography";
+
+@import "tailwindcss-primeui";
+@custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
+
+@import './body.css';
+@import './navbar.css';
+@import './button.css';
+@import './text.css';

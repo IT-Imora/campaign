@@ -1,0 +1,61 @@
+@layer components {
+
+    /* ================= BASE BODY ================= */
+    .body {
+        @apply min-h-screen transition-colors duration-300 ease-in-out;
+    }
+
+    /* ================= THEMES ================= */
+
+    .bg-info {
+        @apply text-white;
+        background: linear-gradient(135deg, #17a2b8, #138496);
+    }
+
+    .bg-primary {
+        @apply text-white;
+        background: linear-gradient(135deg, #007bff, #0056b3);
+    }
+
+    .bg-success {
+        @apply text-white;
+        background: linear-gradient(135deg, #28a745, #20c997);
+    }
+
+    .bg-warning {
+        @apply text-gray-900;
+        background: linear-gradient(135deg, #ffc107, #fd7e14);
+    }
+
+    .bg-danger {
+        @apply text-white;
+        background: linear-gradient(135deg, #dc3545, #c82333);
+    }
+
+    .bg-secondary {
+        @apply text-white;
+        background: linear-gradient(135deg, #6c757d, #5a6268);
+    }
+
+    .bg-dark {
+        @apply text-white;
+        background: linear-gradient(135deg, #343a40, #495057);
+    }
+
+    .bg-light {
+        @apply text-gray-700;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+
+    /* ================= OPTIONAL VARIANTS ================= */
+
+    .bg-transparent {
+        background: transparent;
+    }
+
+    .bg-blur {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+}

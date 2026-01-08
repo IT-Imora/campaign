@@ -1,0 +1,92 @@
+@layer components {
+
+    /* ================= BASE NAVBAR ================= */
+    .navbar {
+        @apply flex items-center justify-between transition-all duration-300 ease-in-out px-4 py-3 md:px-6 md:py-4 lg:px-8;
+    }
+
+    .navbar-fixed {
+        @apply fixed top-0 left-0 w-full z-50;
+    }
+
+    .navbar-sticky {
+        @apply sticky top-0 left-0 w-full z-50;
+    }
+
+    .navbar-brand {
+        @apply font-bold! text-lg md:text-xl lg:text-2xl no-underline text-inherit;
+    }
+
+    .navbar-nav {
+        @apply flex items-center gap-4 md:gap-6 lg:gap-8 list-none m-0 p-0;
+    }
+
+    .navbar-nav a {
+        @apply text-inherit no-underline px-3 py-2 rounded-md transition-colors duration-300 hover:bg-white/10;
+    }
+
+    .navbar-bottom {
+        @apply fixed bottom-0 left-0 w-full z-50;
+    }
+
+    /* ================= TRANSPARENT ================= */
+    .navbar-transparent {
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar-transparent-blur {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* ================= THEMES ================= */
+
+    .navbar-info {
+        @apply text-white shadow-lg;
+        background: linear-gradient(135deg, #17a2b8, #138496);
+        box-shadow: 0 2px 10px rgba(23, 162, 184, 0.3);
+    }
+
+    .navbar-success {
+        @apply text-white shadow-lg;
+        background: linear-gradient(135deg, #28a745, #20c997);
+        box-shadow: 0 2px 10px rgba(40, 167, 69, 0.3);
+    }
+
+    .navbar-warning {
+        @apply text-gray-900 shadow-lg;
+        background: linear-gradient(135deg, #ffc107, #fd7e14);
+        box-shadow: 0 2px 10px rgba(255, 193, 7, 0.3);
+    }
+
+    .navbar-danger {
+        @apply text-white shadow-lg;
+        background: linear-gradient(135deg, #dc3545, #c82333);
+        box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
+    }
+
+    .navbar-dark {
+        @apply text-white shadow-xl;
+        background: linear-gradient(135deg, #343a40, #495057);
+    }
+
+    .navbar-light {
+        @apply text-gray-700 shadow-md;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+
+    .navbar-primary {
+        @apply text-white shadow-lg;
+        background: linear-gradient(135deg, #007bff, #026cde);
+        box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3);
+    }
+
+    .navbar-secondary {
+        @apply text-white shadow-lg;
+        background: linear-gradient(135deg, #6c757d, #5a6268);
+        box-shadow: 0 2px 10px rgba(108, 117, 125, 0.3);
+    }
+}

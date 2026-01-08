@@ -1,0 +1,204 @@
+/* Custom Quill Editor styles to blend with Tailwind CSS */
+.ql-editor {
+    @apply text-gray-900 leading-relaxed;
+    font-family: inherit;
+    line-height: inherit;
+    padding: 0;
+}
+
+.ql-editor h1 {
+    @apply text-4xl font-bold text-gray-900 mb-6 mt-8 leading-tight;
+}
+
+.ql-editor h2 {
+    @apply text-3xl font-semibold text-gray-900 mb-4 mt-6 leading-tight;
+}
+
+.ql-editor h3 {
+    @apply text-2xl font-semibold text-gray-900 mb-3 mt-5 leading-snug;
+}
+
+.ql-editor h4 {
+    @apply text-xl font-medium text-gray-900 mb-2 mt-4;
+}
+
+.ql-editor h5 {
+    @apply text-lg font-medium text-gray-900 mb-2 mt-3;
+}
+
+.ql-editor h6 {
+    @apply text-base font-medium text-gray-900 mb-2 mt-2;
+}
+
+.ql-editor p {
+    @apply mb-4 text-gray-700 leading-relaxed;
+}
+
+.ql-editor p:last-child {
+    @apply mb-0;
+}
+
+.ql-editor strong {
+    @apply font-semibold text-gray-900;
+}
+
+.ql-editor em {
+    @apply italic;
+}
+
+.ql-editor u {
+    @apply underline;
+}
+
+.ql-editor s {
+    @apply line-through;
+}
+
+.ql-editor a {
+    @apply text-blue-600 hover:text-blue-800 underline transition-colors duration-200;
+}
+
+.ql-editor blockquote {
+    @apply border-l-4 border-gray-300 pl-4 py-2 my-4 text-gray-600 italic bg-gray-50 rounded-r-sm;
+}
+
+.ql-editor ul {
+    @apply list-disc list-inside mb-4 space-y-1;
+}
+
+.ql-editor ol {
+    @apply list-decimal list-inside mb-4 space-y-1;
+}
+
+.ql-editor li {
+    @apply text-gray-700 leading-relaxed;
+}
+
+.ql-editor ul ul,
+.ql-editor ol ol {
+    @apply ml-4 mt-1 mb-0;
+}
+
+.ql-editor code {
+    @apply bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono;
+}
+
+.ql-editor pre {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.ql-editor pre code {
+    @apply bg-transparent text-inherit p-0 rounded-none;
+}
+
+.ql-editor img {
+    @apply max-w-full h-auto rounded-lg shadow-sm my-4;
+}
+
+.ql-editor hr {
+    @apply border-0 border-t border-gray-300 my-8;
+}
+
+.ql-editor table {
+    @apply w-full border-collapse border border-gray-300 mb-4 rounded-lg overflow-hidden;
+}
+
+.ql-editor th {
+    @apply bg-gray-50 border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900;
+}
+
+.ql-editor td {
+    @apply border border-gray-300 px-4 py-2 text-gray-700;
+}
+
+/* Text alignment classes */
+.ql-editor .ql-align-center {
+    @apply text-center;
+}
+
+.ql-editor .ql-align-right {
+    @apply text-right;
+}
+
+.ql-editor .ql-align-justify {
+    @apply text-justify;
+}
+
+/* Text size classes */
+.ql-editor .ql-size-small {
+    @apply text-sm;
+}
+
+.ql-editor .ql-size-large {
+    @apply text-lg;
+}
+
+.ql-editor .ql-size-huge {
+    @apply text-xl;
+}
+
+/* Color classes - match with your Tailwind color palette */
+.ql-editor .ql-color-red {
+    @apply text-red-600;
+}
+
+.ql-editor .ql-color-blue {
+    @apply text-blue-600;
+}
+
+.ql-editor .ql-color-green {
+    @apply text-green-600;
+}
+
+.ql-editor .ql-color-yellow {
+    @apply text-yellow-600;
+}
+
+.ql-editor .ql-color-purple {
+    @apply text-purple-600;
+}
+
+/* Background color classes */
+.ql-editor .ql-bg-red {
+    @apply bg-red-100 text-red-900;
+}
+
+.ql-editor .ql-bg-blue {
+    @apply bg-blue-100 text-blue-900;
+}
+
+.ql-editor .ql-bg-green {
+    @apply bg-green-100 text-green-900;
+}
+
+.ql-editor .ql-bg-yellow {
+    @apply bg-yellow-100 text-yellow-900;
+}
+
+.ql-editor .ql-bg-purple {
+    @apply bg-purple-100 text-purple-900;
+}
+
+/* Remove default Quill margins and paddings that conflict with Tailwind */
+.ql-container {
+    @apply border-0;
+}
+
+.ql-editor.ql-blank::before {
+    @apply text-gray-400 italic;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+    .ql-editor h1 {
+        @apply text-3xl;
+    }
+
+    .ql-editor h2 {
+        @apply text-2xl;
+    }
+
+    .ql-editor h3 {
+        @apply text-xl;
+    }
+}
