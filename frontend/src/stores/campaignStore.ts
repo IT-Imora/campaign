@@ -15,6 +15,8 @@ export const useCampaignStore = defineStore('campaign', () => {
     error.value = null
 
     try {
+      reset()
+
       const res = await campaignApi.show(slug)
       campaign.value = res.data
       firstLoad.value = false
@@ -38,6 +40,8 @@ export const useCampaignStore = defineStore('campaign', () => {
     error.value = null
 
     try {
+      reset()
+
       const res = await campaignApi.active()
       campaign.value = res.data
       firstLoad.value = false

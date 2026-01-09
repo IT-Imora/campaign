@@ -16,6 +16,8 @@ export const useCouponStore = defineStore('coupons', () => {
         loading.value = true
         error.value = null
         try {
+            reset()
+            
             const res = await couponApi.check(no_rangka, no_telepon)
             coupons.value = res.data.summary
             count.value = res.data.count

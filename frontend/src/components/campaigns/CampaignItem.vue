@@ -20,11 +20,17 @@ const campaignStore = useCampaignStore()
     </div>
     <div class="p-4 sm:p-6 lg:p-8">
         <h2 class="text-lg text-center sm:text-3xl lg:text-4xl font-bold!">
-            Cara ikut nya gampang banget!
+            {{ campaignStore.campaign?.text || "Cara ikut nya gampang banget!" }}
         </h2>
     </div>
     <div>
-        <Image imageClass="w-full" :src="publicStorage(campaignStore.campaign?.image || '')" />
+        <!-- Mobile -->
+        <Image imageClass="w-full block sm:hidden"
+            :src="publicStorage(campaignStore.campaign?.image_portrait || campaignStore.campaign?.image || '')" />
+
+        <!-- Desktop / Tablet -->
+        <Image imageClass="w-full hidden sm:block"
+            :src="publicStorage(campaignStore.campaign?.image || campaignStore.campaign?.image_portrait || '')" />
     </div>
     <div class="bg-white text-black pb-20 pt-5">
         <!-- <h2 class="text-center font-bold!">Syarat dan Ketentuan</h2> -->

@@ -48,7 +48,8 @@ onMounted(() => {
 
     <Body :severity="campaignStore.campaign?.severity">
         <template #header>
-            <Header backIcon="arrow-left" :severity="campaignStore.campaign?.severity || 'primary'" position="sticky">
+            <Header :backUrl="`/${slug}`" backIcon="arrow-left"
+                :severity="campaignStore.campaign?.severity || 'primary'" position="sticky">
                 <template #heading>
                     Cek Kupon Kamu
                 </template>
@@ -108,8 +109,10 @@ onMounted(() => {
         </template>
     </Body>
 
-    <Dialog header="Syarat dan Ketentuan" v-model:visible="showTerm" modal :style="{ maxWidth: '90vw' }"
-        :breakpoints="{ '1199px': '75vw', '575px': '90vw' }" closable>
-        <div class="prose max-w-none wrap-break-word whitespace-normal" v-html="campaignStore.campaign?.description" />
+    <Dialog header="Informasi Program" v-model:visible="showTerm" class="w-full min-h-full m-0! rounded-none" modal
+        closable maximizable>
+        <div class="px-2 overflow-hidden">
+            <article class="prose max-w-none ql-editor" v-html="campaignStore.campaign?.description" />
+        </div>
     </Dialog>
 </template>

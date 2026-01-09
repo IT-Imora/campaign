@@ -31,12 +31,15 @@ onMounted(async () => {
         await delay(1500)
     }
 
-
-    let campaign = await campaignStore.active()
+    let campaign = campaignStore.campaign
 
     if (campaign) {
         message.value = 'Menyiapkan data...'
     } else {
+        if (!slug) {
+            campaign = await campaignStore.active()
+        }
+
         message.value = 'Tidak ada campaign saat ini.'
     }
 

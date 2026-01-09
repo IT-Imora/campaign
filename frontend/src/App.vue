@@ -1,13 +1,50 @@
 <script setup lang="ts">
 import { RouterView, useRouter, useRoute } from 'vue-router'
-import { ref, watch } from 'vue'
+import { ref, watch, computed, onMounted } from 'vue'
 import ProgressSpinner from 'primevue/progressspinner'
+import ConfirmDialog from 'primevue/confirmdialog'
+import ScrollTop from 'primevue/scrolltop'
+import { useCampaignStore } from '@/stores/campaignStore'
 
 const isLoading = ref(false)
 const router = useRouter()
 const route = useRoute()
+const campaignStore = useCampaignStore()
 
 const DEFAULT_TITLE = 'Campaign | Honda Jakarta Center'
+
+// Map severity ke warna
+const severityColors = {
+  primary: '#1976d2',     // Blue
+  secondary: '#424242',   // Dark Gray
+  success: '#2e7d32',     // Green
+  info: '#0288d1',        // Light Blue
+  warning: '#ed6c02',     // Orange
+  danger: '#d32f2f'       // Red
+}
+
+// Computed property untuk mendapatkan warna berdasarkan severity
+const primaryColor = computed(() => {
+  if (campaignStore.campaign?.severity) {
+    return severityColors[campaignStore.campaign.severity] || severityColors.primary
+  }
+  return severityColors.primary
+})
+
+// Function untuk mengatur CSS variable
+const setCSSVariable = () => {
+  document.documentElement.style.setProperty('--color-primary', primaryColor.value)
+}
+
+// Watch perubahan campaign untuk update CSS variable
+watch(() => campaignStore.campaign?.severity, () => {
+  setCSSVariable()
+}, { immediate: true })
+
+// Set initial CSS variable saat component mounted
+onMounted(() => {
+  setCSSVariable()
+})
 
 const updateTitle = () => {
   document.title = (route.meta.title as string) || DEFAULT_TITLE
@@ -60,9 +97,20 @@ router.afterEach(() => {
     </template>
   </ConfirmDialog>
 
+  <ScrollTop />
+
 </template>
 
 <style scoped>
+.p-scrolltop.p-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  bottom: 4rem;
+  opacity: 0.8;
+  background-color: var(--color-primary);
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
