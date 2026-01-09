@@ -15,7 +15,6 @@ declare module 'vue' {
     Button: typeof import('primevue/button')['default']
     Campaign: typeof import('./src/components/campaigns/Campaign.vue')['default']
     CampaignItem: typeof import('./src/components/campaigns/CampaignItem.vue')['default']
-    ConfirmDialog: typeof import('primevue/confirmdialog')['default']
     CouponAuth: typeof import('./src/components/coupons/CouponAuth.vue')['default']
     Dialog: typeof import('primevue/dialog')['default']
     FloatLabel: typeof import('primevue/floatlabel')['default']
@@ -34,7 +33,6 @@ declare module 'vue' {
     MyCoupons: typeof import('./src/components/coupons/MyCoupons.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    ScrollTop: typeof import('primevue/scrolltop')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }

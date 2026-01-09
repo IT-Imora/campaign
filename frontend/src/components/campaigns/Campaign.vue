@@ -22,6 +22,8 @@ const delay = (ms: number) =>
     new Promise(resolve => setTimeout(resolve, ms))
 
 onMounted(async () => {
+    let campaign = campaignStore.campaign
+
     if (campaignStore.firstLoad) {
         loading.value = true
         // Delay statis agar spinner & pesan tampil dulu
@@ -31,21 +33,32 @@ onMounted(async () => {
         await delay(1500)
     }
 
-    let campaign = campaignStore.campaign
-
     if (campaign) {
-        message.value = 'Menyiapkan data...'
+        if (campaignStore.firstLoad) {
+            message.value = 'Menyiapkan data...'
+            await delay(1000)
+        }
     } else {
-        if (!slug) {
-            campaign = await campaignStore.active()
+        if (!campaignStore.firstLoad) {
+            loading.value = true
         }
 
-        message.value = 'Tidak ada campaign saat ini.'
+        message.value = 'Mengambil data campaign...'
+
+        if (!slug) {
+            campaign = await campaignStore.active()
+        } else {
+            campaign = await campaignStore.fetch(slug)
+        }
+
+        if (!campaign) {
+            message.value = 'Tidak ada campaign saat ini.'
+            await delay(1000)
+        }
     }
 
-    await delay(1000)
-
     loading.value = false
+
     if (!campaign) {
         router.replace({ name: 'not-found' })
     }
