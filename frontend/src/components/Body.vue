@@ -11,7 +11,7 @@ const props = defineProps<{
 <template>
     <div class="body" :class="`bg-${props.severity || 'primary'}`">
         <slot name="header"></slot>
-        <div class="mx-auto sm:px-14">
+        <div class="mx-0 sm:px-14">
             <slot name="body"></slot>
         </div>
     </div>

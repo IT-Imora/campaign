@@ -78,7 +78,7 @@ const shareTo = async () => {
 </script>
 
 <template>
-    <nav class="h-16 navbar" :class="[
+    <nav class="h-16 navbar px-0 sm:px-14" :class="[
         `navbar-${props.severity || 'primary'}`,
         props.position ? `navbar-${props.position}` : ''
     ]">

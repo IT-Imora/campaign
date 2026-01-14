@@ -90,7 +90,9 @@ onMounted(() => {
                             <label for="formData.no_rangka">Nomor Rangka</label>
                         </FloatLabel>
                         <InputGroup>
-                            <InputGroupAddon>+62</InputGroupAddon>
+                            <InputGroupAddon>
+                                <span class="pi pi-phone" />
+                            </InputGroupAddon>
                             <FloatLabel variant="on">
                                 <InputNumber id="formData.no_telepon" v-model="formData.no_telepon" :useGrouping="false"
                                     fluid />

@@ -47,16 +47,16 @@ const slug = route.params.slug as string
                             resmi Honda.
                         </Message> -->
                         <div v-for="coupon in couponStore.coupons" :key="coupon.tanggal_referensi"
-                            class="border border-slate-300 rounded-xl p-4 shadow-sm bg-slate-50">
-                            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+                            class="border border-slate-300 rounded-md p-4 shadow-sm bg-slate-50">
+                            <div class="flex flex-col gap-2">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-bold!"
+                                    <h3 class="text-lg font-bold! mb-0"
                                         :class="`text-${campaignStore.campaign?.severity || 'primary'}`">
                                         Kupon Baru
                                     </h3>
                                     <small class="text-xs text-slate-600"> + {{ coupon.count }} Kupon</small>
                                 </div>
-                                <div class="text-sm text-slate-500">
+                                <div class="text-sm text-slate-500 -mt-2!">
                                     {{ formatDate(coupon.tanggal_referensi, "DD MMM YYYY") }}
                                 </div>
                             </div>
